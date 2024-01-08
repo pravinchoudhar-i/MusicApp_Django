@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Add Details</h3>
+                            <div class="nk-block-des text-soft">
+                                 
+                            </div>
+                        </div><!-- .nk-block-head-content -->
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">    
+                            </div><!-- .toggle-wrap -->
+                        </div><!-- .nk-block-head-content -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .nk-block-head -->
+                <form action="{% url redirect %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}               
+                    <div class="nk-block">
+                        <div class="card card-bordered card-stretch">
+                            <div class="card-inner-group">
+                                <div class="card-inner position-relative card-tools-toggle">
+                                    <div class="row gy-4">
+                                    	
+                    						
+                    							
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="song_name" class="form-label"> Song Name </label>
+															
+						                    				<span style="color:red;">*</span>
+						                  					
+						                  					<div class="form-control-wrap">
+							                  					<input type="text" class="form-control" id="song_name" name="song_name" value=""  placeholder="enter song name"     required   >
+							                  				</div>	
+						                  				</div>
+                                        			</div><!--col-->
+                                        			
+			                                    
+			                            
+                    						
+                    							
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="artist" class="form-label"> Artist </label>
+															
+						                    				<span style="color:red;">*</span>
+						                  					
+						                  					<div class="form-control-wrap">
+							                  					<input type="text" class="form-control" id="artist" name="artist" value=""  placeholder="enter artist name"     required   >
+							                  				</div>	
+						                  				</div>
+                                        			</div><!--col-->
+                                        			
+			                                    
+			                            
+                    						
+                    							
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="genre" class="form-label"> Genre </label>
+															
+						                    				<span style="color:red;">*</span>
+						                  					
+						                  					<div class="form-control-wrap">
+							                  					<input type="text" class="form-control" id="genre" name="genre" value=""     required   >
+							                  				</div>	
+						                  				</div>
+                                        			</div><!--col-->
+                                        			
+			                                    
+			                            
+                    						
+                    							
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                                			<label for="release_year" class="form-label"> Release Year </label>
+															
+							                    			<span style="color:red;">*</span>
+							                  						
+                                                			<div class="form-control-wrap">
+																<input type="number" class="form-control" id="release_year" name="release_year"     required  
+																 
+																>
+															</div>	
+														</div>    
+                                            		</div><!--col-->
+                                            		
+			                                    
+			                            
+                    						
+                    							
+							                  		<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="song_file" class="form-label"> Song File </label>
+															
+							                    			<span style="color:red;">*</span>
+							                  				
+							                  				<div class="form-control-wrap">
+																<input type="file" class="form-control" id="song_file" name="song_file"    required    >
+							                  				</div>
+							                  			</div>
+							                  		</div><!--col-->
+							                  		
+			                                    
+			                            
+                    						
+                    							
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="add_to_like" class="form-label"> Add To Like </label>
+															
+							                  					
+  	                                            			<div class="form-control-wrap">
+                                                    			<input type="checkbox" value="True" name="add_to_like" id="add_to_like"
+                                                    			onchange='ifChecked(this.name)'
+                                                    			   >
+                                                			</div>
+                                                			    
+                                            			</div>
+                                        			</div><!--col-->
+
+													<div>
+														<button type="submit" value="Submit">Submit</button>
+													</div>
+                                        			
+			                                    
+			                                  
+                                    </div><!--row-->
+                                </div><!-- .card-inner -->
+                            </div><!-- .card-inner-group -->
+                        </div><!-- .card -->
+                    </div><!-- .nk-block -->
+                </form>
+           	</div>
+        </div>
+    </div>
+</div>{% endblock content %}
+
+{% block script %}
+{% comment %} <script src="{% static 'assets/js/checkboxValidation.js' %}"></script> {% endcomment %}
+{% endblock script %}
