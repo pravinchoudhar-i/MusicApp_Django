@@ -143,6 +143,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* color:#000000 */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -29313,6 +29314,7 @@ body.nav-shown {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: lightgreen;
 }
 .nk-wrap:not(.nk-wrap-nosidebar) {
   padding: 15px 0;

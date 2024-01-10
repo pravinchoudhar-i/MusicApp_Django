@@ -1,5 +1,6 @@
 from django.db import models
 # from phonenumber_field.modelfields import PhoneNumberField
+from django.contrib.auth.models import User
 import datetime
 
 class AddSong(models.Model):
@@ -11,3 +12,5 @@ class AddSong(models.Model):
 	song_file = models.FileField(upload_to='Music_file',blank=True, null=True)
 	add_to_like = models.BooleanField(default=1, blank=True, null=True)
 	
+class CreateList(models.Model):
+    list_name = models.models.CharField( max_length=200, blank=True , null=True)

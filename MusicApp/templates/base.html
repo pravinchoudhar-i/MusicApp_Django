@@ -16,12 +16,13 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{% static 'assets/css/dashlite.css' %}">
     <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+    
     {% block style %}
     {% endblock style %}
 
 </head>
 
-<body class="nk-body bg-lighter npc-general has-sidebar ">
+<body style="color:lightblue;" class="nk-body bg-lighter npc-general has-sidebar ">
     <div class="nk-app-root">
         <!-- main @s -->
         <div class="nk-main ">
@@ -41,26 +42,31 @@
                         <div class="nk-sidebar-menu" data-simplebar>
                             <ul class="nk-menu">
                                 <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">FEATURES</h6>
+                                    <h6  class="overline-title text-primary-alt">FEATURES</h6>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Song List</span>
+                                        <span  class="nk-menu-text">Song List</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item ">
-                                    <a href="" class="nk-menu-link">
+                                    <a href="\liked-song" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
                                         <span class="nk-menu-text">Liked Song</span>
                                     </a>
+                                    <li class="nk-menu-item">
+                                        <a href="\create-list" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                            <span  class="nk-menu-text">Create Playlist</span>
+                                        </a>
                                 </li><!-- .nk-menu-item -->
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
                 </div><!-- .nk-sidebar-element -->
             </div>
-            <!-- sidebar @e -->
+            <!-- sidebar @e -->    
             <!-- wrap @s -->
             <div class="nk-wrap ">
                 <!-- main header @s -->

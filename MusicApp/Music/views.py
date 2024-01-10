@@ -29,7 +29,7 @@ class AddSongView(View):
 		action = request.GET.get('action',None)
 		instance_id = request.GET.get('id',None)
 		search = request.GET.get('search',None)
-		entries = request.GET.get('entries', '10')
+		entries = request.GET.get('entries', '4')
 
 		table_values = queryset_dict['HTML_table']['values']
 		list_table_values = [x["name"] for x in table_values]
@@ -166,6 +166,7 @@ class AddSongView(View):
 			#'''obj.song_file= song_file
 '''
 			#obj.save()
+   
 		# TODO: Remove file field
 		update = AddSong.objects.filter(id=id).update(song_name = song_name, artist = artist, genre = genre, release_year = release_year, song_file = song_file, add_to_like = add_to_like)
 		
@@ -181,3 +182,18 @@ class AddSongView(View):
 '''
     
 
+def LikedSong(request):
+    liked_song=AddSong.objects.filter(add_to_like=True)
+    context ={
+		'liked_song':liked_song
+		
+	}
+    return render(request,'liked.html',context)
+
+def CreatePlaylist(request):
+    song_name=AddSong.objects.filter().all()
+    context ={
+		'song_name':song_name
+		
+	}
+    return render(request,'C_Playlist.html',context)

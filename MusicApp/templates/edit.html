@@ -12,7 +12,6 @@
                         <div class="nk-block-head-content">
                             <h3 class="nk-block-title page-title">Add Details</h3>
                             <div class="nk-block-des text-soft">
-                                 
                             </div>
                         </div><!-- .nk-block-head-content -->
                         <div class="nk-block-head-content">
@@ -126,12 +125,16 @@
 							                  				
                                                 			<div class="form-control-wrap">
                                                     			<input type="checkbox" name="add_to_like" value = "A2"
-																{% isCheck data 'add_to_like' 'A2' as ischecked %}
+																{% comment %} {% isCheck data 'add_to_like' 'A2' as ischecked %} {% endcomment %}
 																{% if ischecked %} checked {% endif %}
 																onchange="ifChecked(this.name)"
 																 
-																>A1
+																>
                                                 			</div>
+
+															<div>
+																<button type="submit" value="Submit">Submit</button>
+															</div>
                                                 			    
                                             			</div>
                                         			</div><!--col-->
