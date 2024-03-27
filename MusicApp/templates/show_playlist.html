@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% block content %}
+ <div class="nk-content ">    
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Created Playlists</h3>
+                            <div class="nk-block-des text-soft">
+                                <!-- <p>You have total 2,595 users.</p> -->
+                                {% if messages %}
+                                    {% for message in messages %}   
+                                        <div class="example-alert">
+                                            <div class="alert alert-{{ message.tags}} alert-dismissible alert-icon"><strong>{{message}}</strong><button class="close" data-bs-dismiss="alert"></button>
+                                            </div>
+                                        </div>
+                                    {% endfor %}   
+                                {% endif %}
+                            </div>
+                        </div><!-- .nk-block-head-content -->
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">
+                                <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                                <div class="toggle-expand-content" data-content="pageMenu">
+                                    
+                                </div>
+                            </div><!-- .toggle-wrap -->
+                        </div><!-- .nk-block-head-content -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .nk-block-head -->
+                <div class="nk-block">
+                    <div class="card card-bordered card-stretch">
+                        <div class="card-inner-group">
+                            <div class="card-inner position-relative card-tools-toggle">
+                                <div class="card-title-group">
+                                    <div class="card-tools">
+                                        <div class="form-inline flex-nowrap gx-3">
+                                            <form action="" method="GET">
+                                                <div class="btn-wrap">
+                                                    <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light" type="submit" name="action" value="All">View All</button></span>
+                                                </div>
+                                            </form>
+                                            
+                                        </div><!-- .form-inline -->
+                                    </div><!-- .card-tools -->
+                                    <div class="card-tools me-n1">
+                                        <ul class="btn-toolbar gx-1">
+                                            <li>
+                                                <a href="" class="btn btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a>
+                                            </li><!-- li -->
+                                            <li class="btn-toolbar-sep"></li><!-- li -->
+                                            <li>
+                                                <div class="dropdown">
+                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
+                                                        <div class="dot dot-primary"></div>
+                                                        <em class="icon ni ni-filter-alt"></em>
+                                                    </a>
+                                                    <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
+                                                        <div class="dropdown-head">
+                                                            <span class="sub-title dropdown-title">Filter By</span>
+                                                        </div>
+                                                        <div class="dropdown-body dropdown-body-rg">
+                                                            <form action="#" method="GET">
+                                                            <div class="row gx-6 gy-3">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label class="overline-title overline-title-alt"></label>
+                                                                        <select class="form-select" id='project-id' name='project-id' required='true'>
+                                                                            <option value="" selected disabled>--select--</option>
+                                                                                <option value=""></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                        
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <button class="btn btn-secondary" type="submit" name="action" value="filter">Filter</button>
+                                                                    </div>
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                            </form>
+                                                        </div>
+                                                    </div><!-- .filter-wg -->
+                                                </div><!-- .dropdown -->
+                                            </li><!-- li -->
+                                        </ul><!-- .btn-toolbar -->
+                                    </div><!-- .card-tools -->
+                                </div><!-- .card-title-group -->
+                                <form action="" method="GET">
+                                    <div class="card-search search-wrap" data-search="search">
+                                        <div class="card-body">
+                                            <div class="search-content">
+                                                <a href="" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
+                                                <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by columns mentioned below" name="search">
+                                                <button type="submit" class="search-submit btn btn-icon" name="action" value="search"><em class="icon ni ni-search"></em></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form><!-- .card-search -->
+                            </div><!-- .card-inner -->
+                            <div class="card-inner p-0">
+                                <div class="nk-tb-list nk-tb-ulist is-compact">
+                                    <div class="nk-tb-item nk-tb-head">
+                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Sr. No.</span></div>
+                                         {% comment %} {% for i in JsonForm.HTML_table.headers %} {% endcomment %}
+                                        {% comment %} <div class="nk-tb-col tb-col-md">
+                                          <span class="sub-text">{{i}}</span>
+                                        </div> {% endcomment %}
+                                        <div class="nk-tb-col tb-col-md">
+                                          <span class="sub-text">Playlist Name</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                          <span class="sub-text">Song Name</span>
+                                        </div>
+                                        {% comment %} {% endfor %} {% endcomment %}
+                                        <div class="nk-tb-col nk-tb-col-tools"></div>
+                                    </div><!-- .nk-tb-item -->
+                                     {% comment %} {% for i in playlist_instance %}
+                                    <div class="nk-tb-item"> {% endcomment %}
+                                        {% comment %} <div class="nk-tb-col tb-col-md">
+                                            <span>{{ forloop.counter }}</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                            <span>{{ i.playlist_name }}</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                            <span>{{ i.song_name }}</span>
+                                        </div> {% endcomment %}
+                                     
+                                       
+                                        <div class="nk-tb-col nk-tb-col-tools">
+                                            <ul class="nk-tb-actions gx-2">
+                                                <li>
+                                                    <div class="drodown">
+                                                        <a href="#" class="btn btn-sm btn-icon btn-trigger dropdown-toggle" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a> 
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <ul class="link-list-opt no-bdr">
+                                                                <li>
+                                                                    <form action="" method="get">
+                                                                        <input type="text" hidden name="id" value="{{i.id}}">
+                                                                        <span>
+                                                                            <button class="btn btn-icon" type="submit" name="action" value="edit">
+                                                                            <em class="icon ni ni-edit"></em>Edit
+                                                                            </button
+                                                                        ></span>
+                                                                    </form>
+                                                                </li>
+                                                                <li>
+                                                                  <form action="" method="get">
+                                                                        <input type="text" hidden name="id" value="{{i.id}}">
+                                                                  <span>
+                                                                  <button class="btn btn-icon" type="submit" name="action" value="delete">
+                                                                  <em class="icon ni ni-trash"></em>Delete
+                                                                </button>
+                                                                </span>
+                                                                </form>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .nk-tb-item -->
+                                    {% comment %} {% endfor %}  {% endcomment %}
+                                </div><!-- .nk-tb-list -->
+                            </div><!-- .card-inner -->
+                            <div class="card-inner">
+                                <div class="nk-block-between-md g-3">
+                                    <div class="g">
+                                        <ul class="pagination justify-content-center justify-content-md-start">
+                                            {% if page_obj.has_previous %}
+                                            <li class="page-item"><a class="page-link"
+                                                    href="{{pagination_url}}page={{ page_obj.previous_page_number }}">Prev</a>
+                                            </li>
+                                            {% endif %}
+                                            {% for num in page_obj.paginator.page_range %}
+                                            {% if page_obj.number == num %}
+                                            <li class="page-item"><a class="page-link"
+                                                    href="{{pagination_url}}page={{ num }}">{{num}}</a></li>
+                                            {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                                                <li class="page-item"><a class="page-link"
+                                                    href="{{pagination_url}}page={{ num }}">{{ num }}</a>
+                                                </li>
+                                                {% endif %}
+                                                {% endfor %}
+                                                {% if page_obj.has_next %}
+                                                <li class="page-item"><a class="page-link"
+                                                        href="{{pagination_url}}page={{ page_obj.next_page_number }}">Next</a>
+                                                </li>
+                                                {% endif %}
+
+                                        </ul>
+                                        <!-- .pagination -->
+                                    </div>
+                                    <div class="g">
+                                        <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
+                                            <div>Page</div>
+                                            <div>
+                                                <form action="" method="GET">
+                                                <select class="form-select" name="entries" onchange="this.form.submit()">
+                                                    <option value="" selected disabled>--select--</option>
+                                            
+                                                    <option value="25">25</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                    <option value="50">50</option>
+                                                    <option value="60">60</option>
+                                                    <option value="70">70</option>
+                                                    <option value="80">80</option>
+                                                    <option value="90">90</option>
+                                                    <option value="100">100</option>
+                                                </select>
+                                                <!-- <button type="submit" class="btn btn-dim">
+                                                    <em class="icon ni ni-check-round-cut"></em>
+                                                </button>   -->
+                                                </form>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- .pagination-goto -->
+                                </div>
+                            </div><!-- .card-inner -->
+                        </div><!-- .card-inner-group -->
+                    </div><!-- .card -->
+                </div><!-- .nk-block -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for i in playlist_instance  %}
+<br>
+<div class="col-xxl-8">
+    <div class="card card-full">
+        <div class="card-inner">
+            <div class="card-title-group">
+                <div class="card-title">
+                    <h6 class="title">{{i.playlist_name}}</h6>
+                </div>
+                {% comment %} <div class="card-tools">
+                    <a href="#" class="link">View All</a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <div class="card-inner py-0 mt-n2">
+            <div class="nk-tb-list nk-tb-flush nk-tb-dashed">
+
+                <div class="nk-tb-item nk-tb-head">
+                    <div class="nk-tb-col"><span>Song Name</span></div>
+                    {% comment %} <div class="nk-tb-col tb-col-md"><span>Channels</span></div>
+                    <div class="nk-tb-col tb-col-sm"><span>Status</span></div>
+                    <div class="nk-tb-col tb-col-md"><span>Assignee</span></div>
+                    <div class="nk-tb-col text-end"><span>Date Range</span></div> {% endcomment %}
+                </div><!-- .nk-tb-head -->
+                <div class="nk-tb-item">
+                     <div class="nk-tb-col">
+                        <span class="tb-lead">{{i.song_name}}<span class="dot dot-success d-sm-none ms-1"></span></span>
+                        
+                    </div> 
+                    {% comment %} <div class="nk-tb-col tb-col-mb">
+                        <ul class="d-flex gx-1">
+                            <li class="text-facebook"><em class="icon ni ni-facebook-f"></em></li>
+                            <li class="text-instagram"><em class="icon ni ni-instagram"></em></li>
+                            <li class="text-linkedin"><em class="icon ni ni-linkedin"></em></li>
+                            <li class="text-twitter"><em class="icon ni ni-twitter"></em></li>
+                            <li class="text-youtube"><em class="icon ni ni-youtube-fill"></em></li>
+                        </ul> {% endcomment %}
+                    </div>
+                    {% comment %} <div class="nk-tb-col tb-col-sm">
+                        <div class="badge badge-dim bg-success">Live Now</div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="nk-tb-col tb-col-md">
+                        <div class="user-avatar-group">
+                            <div class="user-avatar xs">
+                                <img src="./images/avatar/e-sm.jpg" alt="">
+                            </div>
+                            <div class="user-avatar xs">
+                                <img src="./images/avatar/f-sm.jpg" alt="">
+                            </div>
+                            <div class="user-avatar xs">
+                                <img src="./images/avatar/g-sm.jpg" alt="">
+                            </div>
+                            <div class="user-avatar xs">
+                                <span>2+</span>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="nk-tb-col text-end"><span>01 Dec - 07 Dec</span></div> {% endcomment %}
+                
+            </div><!-- .nk-tb-list -->
+        </div>
+    </div><!-- .card -->
+</div><!-- .col -->
+{% endfor %}
+    
+{% endblock content %}

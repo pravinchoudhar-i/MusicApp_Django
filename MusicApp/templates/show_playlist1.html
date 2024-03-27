@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="nk-block-title page-title">Created Playlists</h3>
+{% for i in playlist_instance  %}
+<br>
+<div class="col-xxl-8">
+    <div class="card card-full">
+        <div class="card-inner">
+            <div class="card-title-group">
+                <div class="card-title">
+                    <h6 class="title">{{i.playlist_name}}</h6>
+                </div>
+                {% comment %} <div class="card-tools">
+                    <a href="#" class="link">View All</a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <div class="card-inner py-0 mt-n2">
+            <div class="nk-tb-list nk-tb-flush nk-tb-dashed">
+
+                <div class="nk-tb-item nk-tb-head">
+                    <div class="nk-tb-col"><span>Song Name</span></div>
+                    {% comment %} <div class="nk-tb-col tb-col-md"><span>Channels</span></div>
+                    <div class="nk-tb-col tb-col-sm"><span>Status</span></div>
+                    <div class="nk-tb-col tb-col-md"><span>Assignee</span></div>
+                    <div class="nk-tb-col text-end"><span>Date Range</span></div> {% endcomment %}
+                </div><!-- .nk-tb-head -->
+                <div class="nk-tb-item">
+                     <div class="nk-tb-col">
+                        <span class="tb-lead">{{i.song_name}}<span class="dot dot-success d-sm-none ms-1"></span></span>
+                        
+                    </div> 
+                    {% comment %} <div class="nk-tb-col tb-col-mb">
+                        <ul class="d-flex gx-1">
+                            <li class="text-facebook"><em class="icon ni ni-facebook-f"></em></li>
+                            <li class="text-instagram"><em class="icon ni ni-instagram"></em></li>
+                            <li class="text-linkedin"><em class="icon ni ni-linkedin"></em></li>
+                            <li class="text-twitter"><em class="icon ni ni-twitter"></em></li>
+                            <li class="text-youtube"><em class="icon ni ni-youtube-fill"></em></li>
+                        </ul> {% endcomment %}
+                    </div>
+                    {% comment %} <div class="nk-tb-col tb-col-sm">
+                        <div class="badge badge-dim bg-success">Live Now</div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="nk-tb-col tb-col-md">
+                        <div class="user-avatar-group">
+                            <div class="user-avatar xs">
+                                <img src="./images/avatar/e-sm.jpg" alt="">
+                            </div>
+                            <div class="user-avatar xs">
+                                <img src="./images/avatar/f-sm.jpg" alt="">
+                            </div>
+                            <div class="user-avatar xs">
+                                <img src="./images/avatar/g-sm.jpg" alt="">
+                            </div>
+                            <div class="user-avatar xs">
+                                <span>2+</span>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="nk-tb-col text-end"><span>01 Dec - 07 Dec</span></div> {% endcomment %}
+                
+            </div><!-- .nk-tb-list -->
+        </div>
+    </div><!-- .card -->
+</div><!-- .col -->
+{% endfor %}
+{% endblock content %}

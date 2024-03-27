@@ -47,7 +47,7 @@
                                 <li class="nk-menu-item">
                                     <a href="" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span  class="nk-menu-text">Song List</span>
+                                        <span  class="nk-menu-text">Home </span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item ">
@@ -55,12 +55,20 @@
                                         <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
                                         <span class="nk-menu-text">Liked Song</span>
                                     </a>
+                                </li>
                                     <li class="nk-menu-item">
-                                        <a href="\create-list" class="nk-menu-link">
+                                        {% comment %} <a href="\playlist" class="nk-menu-link"> {% endcomment %}
+                                        <a href="{% url 'playlist' %}?action=create"  class="nk-menu-link" method="get" name="action" value="create">
                                             <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                             <span  class="nk-menu-text">Create Playlist</span>
                                         </a>
                                 </li><!-- .nk-menu-item -->
+                                {% comment %} <li class="nk-menu-item">
+                                    <a href="\show-playlist" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span  class="nk-menu-text">Show Playlist </span>
+                                    </a>
+                                </li><!-- .nk-menu-item --> {% endcomment %}
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
@@ -81,7 +89,7 @@
                                     
                                     <li class="dropdown user-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <div class="user-toggle">
+                                            {% comment %} <div class="user-toggle">
                                                 <div class="user-avatar sm">
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
@@ -89,7 +97,7 @@
                                                     <div class="user-status"></div>
                                                     <div class="user-name dropdown-indicator"></div>
                                                 </div>
-                                            </div>
+                                            </div> {% endcomment %}
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
                                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
@@ -135,7 +143,7 @@
                 <!-- footer @s -->
                 
                 <!-- footer @e -->
-            </div>
+            </div> 
             <!-- wrap @e -->
         </div>
         <!-- main @e -->

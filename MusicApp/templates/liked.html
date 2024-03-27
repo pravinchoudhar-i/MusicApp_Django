@@ -1,142 +1,13 @@
-{% load static %}
-{% comment %} {% load custom_tags %} {% endcomment %}
-
-<!DOCTYPE html>
-<html lang="zxx" class="js">
-
-<head>
-    <base href="../">
-    <meta charset="utf-8">
-    <meta name="author" content="Softnio">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
-    <!-- Fav Icon  -->
-    <!-- Page Title  -->
-    <title>Dynamic-Forms</title>
-    <!-- StyleSheets  -->
-    <link rel="stylesheet" href="{% static 'assets/css/dashlite.css' %}">
-    <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
-    
-    {% block style %}
-    {% endblock style %}
-
-</head>
-
-<body class="nk-body bg-lighter npc-general has-sidebar ">
-    <div class="nk-app-root">
-        <!-- main @s -->
-        <div class="nk-main ">
-            <!-- sidebar @s -->
-            <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
-                <div class="nk-sidebar-element nk-sidebar-head">
-                    <div class="nk-menu-trigger">
-                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
-                        <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
-                    </div>
-                    <div class="nk-sidebar-brand">
-                        
-                    </div>
-                </div><!-- .nk-sidebar-element -->
-                <div class="nk-sidebar-element nk-sidebar-body">
-                    <div class="nk-sidebar-content">
-                        <div class="nk-sidebar-menu" data-simplebar>
-                            <ul class="nk-menu">
-                                <li class="nk-menu-heading">
-                                    <h6  class="overline-title text-primary-alt">FEATURES</h6>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span  class="nk-menu-text">Song List</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item ">
-                                    <a href="\liked-song" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                                        <span class="nk-menu-text">Liked Song</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item ">
-                                    <a href="\create-list" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                                        <span class="nk-menu-text">Create Playlist</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                            </ul><!-- .nk-menu -->
-                        </div><!-- .nk-sidebar-menu -->
-                    </div><!-- .nk-sidebar-content -->
-                </div><!-- .nk-sidebar-element -->
-            </div>
-            <!-- sidebar @e -->
-            <!-- wrap @s -->
-            <div class="nk-wrap ">
-                <!-- main header @s -->
-                <div class="nk-header nk-header-fixed is-light">
-                    <div class="container-fluid">
-                        <div class="nk-header-wrap">
-                            <div class="nk-menu-trigger d-xl-none ms-n1">
-                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
-                            </div>                        
-                            <div class="nk-header-tools">
-                                <ul class="nk-quick-nav">
-                                    
-                                    <li class="dropdown user-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <div class="user-toggle">
-                                                <div class="user-avatar sm">
-                                                    <em class="icon ni ni-user-alt"></em>
-                                                </div>
-                                                <div class="user-info d-none d-md-block">
-                                                    <div class="user-status"></div>
-                                                    <div class="user-name dropdown-indicator"></div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
-                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
-                                                <div class="user-card">
-                                                    <div class="user-avatar">
-                                                        <span></span>
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <span class="lead-text"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown-inner">
-                                                <ul class="link-list">
-                                                    <!-- <li><a href="html/user-profile-regular.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/user-profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/user-profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li> -->
-                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="dropdown-inner">
-                                                <ul class="link-list">
-                                                    <li><a href=""><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li><!-- .dropdown -->
-                                    
-                                </ul><!-- .nk-quick-nav -->
-                            </div><!-- .nk-header-tools -->
-                        </div><!-- .nk-header-wrap -->
-                    </div><!-- .container-fliud -->
-                </div>
-                <!-- main header @e -->
-                <!-- content @s -->
-                <div class="nk-content ">
-                    <div class="container-fluid">
-                       {% block content %} 
-                       <div class="nk-content ">
+{% extends "base.html" %} 
+{% block content %} 
+                       <div class="nk-content ">    
                         <div class="container-fluid">
                             <div class="nk-content-inner">
                                 <div class="nk-content-body">
                                     <div class="nk-block-head nk-block-head-sm">
                                         <div class="nk-block-between">
                                             <div class="nk-block-head-content">
-                                                <h3 class="nk-block-title page-title">Song List</h3>
+                                                <h3 class="nk-block-title page-title">Liked Songs</h3>
                                                 <div class="nk-block-des text-soft">
                                                     <!-- <p>You have total 2,595 users.</p> -->
                                                     {% if messages %}
@@ -166,11 +37,11 @@
                                                     <div class="card-title-group">
                                                         <div class="card-tools">
                                                             <div class="form-inline flex-nowrap gx-3">
-                                                                <form action="" method="GET">
+                                                                {% comment %} <form action="" method="GET">
                                                                     <div class="btn-wrap">
                                                                         <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light" type="submit" name="action" value="All">View All</button></span>
                                                                     </div>
-                                                                </form>
+                                                                </form> {% endcomment %}
                                                                 
                                                             </div><!-- .form-inline -->
                                                         </div><!-- .card-tools -->
@@ -256,9 +127,13 @@
                                                                 <span>{{ i.song_name }}</span>
                                                             </div>
                                                            
-                                                            <div class="nk-tb-col tb-col-md">
+                                                            {% comment %} <div class="nk-tb-col tb-col-md">
                                                                 <span><strong><a href="{{i.file}}" target="_blank">{{i.song_name}}</a></strong></span>
-                                                            </div> 
+                                                            </div>  {% endcomment %}
+                                                            <audio  controls>
+                                                                <source src="{{i.song_file.url}}" type="audio/mp3">
+                                                                Your browser does not support the audio element.
+                                                                </audio>
                                                            
                                                             <div class="nk-tb-col nk-tb-col-tools">
                                                                 <ul class="nk-tb-actions gx-2">
@@ -363,26 +238,3 @@
                     </div>
                         
                        {% endblock content %}
-                    </div>
-                </div>
-                <!-- content @e -->
-                <!-- footer @s -->
-                
-                <!-- footer @e -->
-            </div>
-            <!-- wrap @e -->
-        </div>
-        <!-- main @e -->
-    </div>
-    <!-- app-root @e -->
-    
-    <!-- JavaScript -->
-    <script src="{% static 'assets/js/bundle.js' %}"></script>
-    <script src="{% static 'assets/js/scripts.js' %}"></script>
-    {% comment %} <script src="{% static 'assets/js/checkboxValidation.js' %}"></script> {% endcomment %}
-    <script src="{% static 'assets/js/example-sweetalert.js' %}"></script>
-   
-
-</body>
-
-</html>

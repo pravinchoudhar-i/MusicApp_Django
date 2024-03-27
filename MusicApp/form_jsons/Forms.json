@@ -1,1 +1,43 @@
-{"css": "base1.css", "legend": "Player Details", "HTML_fields": [{"tag": "input", "type": "text", "class": "form-control", "label": "Form Name", "id": "form_name", "name": "form_name", "maxlength": "200", "required": "true", "placeholder": "Enter form name"}], "HTML_table": {"headers": ["Form Name"], "values": [{"name": "form_name", "type": "text"}], "searchable_fields": ["form_name"]}, "Model_fields": {"tableName": "Forms", "tableFields": [{"type": "CharField", "name": "form_name", "isBlank": "True", "isNull": "True", "maxLength": "200"}]}}
+{
+    "css": "base1.css",
+    "legend": "Player Details",
+    "HTML_fields": [
+        {
+            "tag": "input",
+            "type": "text",
+            "class": "form-control",
+            "label": "Form Name",
+            "id": "form_name",
+            "name": "form_name",
+            "maxlength": "200",
+            "required": "true",
+            "placeholder": "Enter form name"
+        }
+    ],
+    "HTML_table": {
+        "headers": [
+            "Form Name"
+        ],
+        "values": [
+            {
+                "name": "form_name",
+                "type": "text"
+            }
+        ],
+        "searchable_fields": [
+            "form_name"
+        ]
+    },
+    "Model_fields": {
+        "tableName": "Forms",
+        "tableFields": [
+            {
+                "type": "CharField",
+                "name": "form_name",
+                "isBlank": "True",
+                "isNull": "True",
+                "maxLength": "200"
+            }
+        ]
+    }
+}

@@ -35,7 +35,7 @@
                                         <li class="nk-block-tools-opt">
                                             <div class="drodown">
                                                 <form action="{% url redirect %}" method="get">
-                                                    <button class="btn btn-primary" type="submit" name="action" value="create"><em class="icon ni ni-plus"></em>Create</button>
+                                                    <button class="btn btn-primary" type="submit" name="action" value="create"><em class="icon ni ni-plus"></em>Add Song</button>
                                                 </form>
                                             </div>
                                         </li>
@@ -52,11 +52,11 @@
                                 <div class="card-title-group">
                                     <div class="card-tools">
                                         <div class="form-inline flex-nowrap gx-3">
-                                            <form action="{% url redirect %}" method="GET">
+                                            {% comment %} <form action="{% url redirect %}" method="GET">
                                                 <div class="btn-wrap">
                                                     <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light" type="submit" name="action" value="All">View All</button></span>
                                                 </div>
-                                            </form>
+                                            </form> {% endcomment %}
                                             
                                         </div><!-- .form-inline -->
                                     </div><!-- .card-tools -->
@@ -121,9 +121,11 @@
                                     <div class="nk-tb-item nk-tb-head">
                                         <div class="nk-tb-col tb-col-md"><span class="sub-text">Sr. No.</span></div>
                                          {% for i in JsonForm.HTML_table.headers %}
-                                        <div class="nk-tb-col tb-col-md">
-                                          <span class="sub-text">{{i}}</span>
-                                        </div>
+                                         {% if not i.add_to_like %}
+                                         <div class="nk-tb-col tb-col-md">
+                                            <span class="sub-text">{{i}}</span>
+                                          </div>
+                                         {% endif %}
                                         {% endfor %}
                                         <div class="nk-tb-col nk-tb-col-tools"></div>
                                     </div><!-- .nk-tb-item -->
@@ -142,11 +144,29 @@
                                             <span>{{ i.genre }}</span>
                                         </div> 
                                         <div class="nk-tb-col tb-col-md">
-                                            <span><strong><a href="{{i.file}}" target="_blank">{{i.song_name}}</a></strong></span>
+                                            {% comment %} <span><strong><a href="{{i.file}}" target="_blank">{{i.song_name}}</a></strong></span> {% endcomment %}
+
+                                             {% comment %} <audio controls>
+                                                <source src="/Music_file/{{ i.file.url }}" type="audio/mp3">
+                                              </audio>  {% endcomment %}
+
+                                               {% comment %} {% if value.type == 'file' %}
+                                            <div class="nk-tb-col tb-col-md">
+                                            <span><strong>
+                                                <audio controls loop src="/media/Music_file/{{ i.file }}" type="audio/mp3"></audio>
+                                                <a href="{{i.file.url}}" target="_blank"></a>
+                                            </strong></span>
+                                            </div>
+                                            {% endif %}  {% endcomment %}
+
+                                                <audio  controls>
+                                                <source src="{{i.song_file.url}}" type="audio/mp3">
+                                                Your browser does not support the audio element.
+                                                </audio>
                                         </div> 
-                                        <div class="nk-tb-col tb-col-md">
+                                         <div class="nk-tb-col tb-col-md">
                                             <span>{{ i.add_to_like }}</span>
-                                        </div> 
+                                        </div>  
                                         {% comment %} {% for value in values %}
                                         {% if value.type == 'file' %}
                                         <div class="nk-tb-col tb-col-md">
@@ -256,7 +276,7 @@
                                                 </button>   -->
                                                 </form>
                                             </div>
-                                            
+                                                
                                         </div>
                                     </div>
                                     <!-- .pagination-goto -->
